@@ -43,7 +43,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FunWithSeq.fsx" />
+    <Compile Include="FunWithLists.fsx" />
     <Compile Include="ScratchPaper.fsx" />
   </ItemGroup>
   <ItemGroup>

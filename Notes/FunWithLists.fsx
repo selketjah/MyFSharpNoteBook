@@ -79,3 +79,8 @@ let startsWithSList =
   |> Seq.countBy (fun x -> if x.StartsWith("S") then "wOOt" else "boehhh")
 // -> returns seq [("boehhh", 11); ("wOOt", 1)]
 // -> general seq[("else", numberOfTimes); ("then", numberOfTimes)]
+let groupByAge =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17);("Mattis", 19); ("Wout", 18); ("Eme", 3)]
+  |> Seq.countBy snd
+// -> can be used with fst & snd if you have list of key-value pairs
+// -> seq [(19, 2); (18, 2); (17, 1); (3, 1)]

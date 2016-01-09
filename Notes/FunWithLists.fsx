@@ -98,3 +98,4 @@ let distinctByNameList =
    ["Emily"; "Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
   |> Seq.toList
   |> List.distinctBy (fun name -> name.StartsWith("E"))
+// -> result is ["Emily"; "Bob"] because Emily is true and Bob is false

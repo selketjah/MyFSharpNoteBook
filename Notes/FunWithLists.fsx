@@ -35,7 +35,6 @@ let sum =
   |> Seq.fold (+) 0
 // -> invalid example: only for loosely-typed seq casting to typed seq (use map here)
 
-
 // choose
 let tryFloat str =
     match System.Single.TryParse(str) with
@@ -46,3 +45,13 @@ let parsedFloats =
   floatStringList
   |> Seq.choose tryFloat
   // -> same as filter but with option
+
+// collect
+let seqNr a = a
+let listOfLists = [ listOneToFive; listSixToTen]
+let flattenedList =
+  listOfLists
+  |> List.collect id
+// -> id is the identity function and is the same as seqNr
+
+// 

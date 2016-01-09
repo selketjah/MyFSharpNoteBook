@@ -61,17 +61,33 @@ let shouldBeZero =
 // -> shorter explained: it cuts off the list at first difference
 // [1;1;2;1;1;1] -> [1;1]
 
-// countBy
-let startsWithSList =
-  concatedListOfNames
+// countBy & groupBy
+let namesThatStartWithS =
+  ["Emily"; "Bob"; "Kate"; "Sarah"]
+  |> Seq.groupBy (fun x -> if x.StartsWith("S") then "wOOt" else "boehhh")
+// -> [("boehhh", seq ["Emily"; "Bob"; "Kate"]);
+//     ("wOOt", seq ["Sarah"])]
+// -> general seq[("else", list); ("then", list)]
+
+let numberOfNamesWithStartVowelS =
+  ["Emily"; "Bob"; "Kate"; "Sarah"]
   |> Seq.countBy (fun x -> if x.StartsWith("S") then "wOOt" else "boehhh")
-// -> returns seq [("boehhh", 11); ("wOOt", 1)]
+// -> returns seq [("boehhh", 3); ("wOOt", 1)]
 // -> general seq[("else", numberOfTimes); ("then", numberOfTimes)]
-let groupByAge =
+
+let numberOfPeopleWithSameAge =
   [("Bob", 19); ("Kate", 18); ("Sarah", 17);("Mattis", 19); ("Wout", 18); ("Eme", 3)]
   |> Seq.countBy snd
 // -> can be used with fst & snd if you have list of key-value pairs
 // -> seq [(19, 2); (18, 2); (17, 1); (3, 1)]
+
+let peopleGroupedByAge =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17);("Mattis", 19); ("Wout", 18); ("Eme", 3)]
+  |> Seq.groupBy snd
+// -> [(19, seq [("Bob", 19); ("Mattis", 19)]);
+//     (18, seq [("Kate", 18); ("Wout", 18)]);
+//     (17, seq [("Sarah", 17)]);
+//     (3, seq [("Eme", 3)])]
 
 // delay
 
@@ -123,7 +139,6 @@ let areTheSameList =
   ||> Seq.forall2 (fun x y -> x = y)
 // are these two lists the same?
 // -> false
-
 
 // filter vs find vs findIndex
 let namesThatStartWithE =

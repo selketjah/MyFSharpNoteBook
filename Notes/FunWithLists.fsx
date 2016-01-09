@@ -99,3 +99,8 @@ let distinctByNameList =
   |> Seq.toList
   |> List.distinctBy (fun name -> name.StartsWith("E"))
 // -> result is ["Emily"; "Bob"] because Emily is true and Bob is false
+
+// empty
+let emptyStringList = Seq.empty<string>
+
+// 

@@ -108,3 +108,13 @@ let emily =
   ["Emily"]
   |> Seq.toList
   |> Seq.exactlyOne
+
+// exists
+let containsTwo =
+  [1;1;1;2;1;1]
+  |> Seq.exists (fun nr -> nr = 2)
+
+// exists2
+let haveSameElement =
+  ([1;1;1;2;1;1], [1;1;1;1;1;1])
+  ||> Seq.exists2 (fun x y -> x = y)

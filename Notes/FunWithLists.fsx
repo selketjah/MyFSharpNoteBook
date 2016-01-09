@@ -68,5 +68,14 @@ let listOfNames1 = ["Bob"; "Kate"; "Sarah"]
 let listOfNames2 =  ["Frank"; "Thomas"; "Lien"]
 let listOfNames3 =  ["Mattis"; "Wout"; "Eme"]
 let listOfNames4 =  ["Mattis"; "Wout"; "Eme"]
-let concatedListOfNames = Seq.concat [listOfNames1; listOfNames2; listOfNames3; listOfNames4]
+let concatedListOfNames =
+  [listOfNames1; listOfNames2; listOfNames3; listOfNames4]
+  |> Seq.concat
 // -> same as append but number of lists > 2
+
+// countBy
+let startsWithSList =
+  concatedListOfNames
+  |> Seq.countBy (fun x -> if x.StartsWith("S") then "wOOt" else "boehhh")
+// -> returns seq [("boehhh", 11); ("wOOt", 1)]
+// -> general seq[("else", numberOfTimes); ("then", numberOfTimes)]

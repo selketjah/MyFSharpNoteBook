@@ -44,17 +44,6 @@ let sum =
   |> Seq.fold (+) 0
 // -> invalid example: only for loosely-typed seq casting to typed seq (use map here)
 
-// choose
-let tryFloat str =
-    match System.Single.TryParse(str) with
-    | true, i -> Some i
-    | false, _ -> None
-let floatStringList = ["1.0"; "2.0"; "sthsth"]
-let parsedFloats =
-  floatStringList
-  |> Seq.choose tryFloat
-  // -> same as filter but with option
-
 // collect
 let listOfLists = [ listOneToFive; listSixToTen]
 let flattenedList =
@@ -109,17 +98,25 @@ let emily =
   |> Seq.toList
   |> Seq.exactlyOne
 
-// exists
+// exists vs forall
 let containsTwo =
   [1;1;1;2;1;1]
   |> Seq.exists (fun nr -> nr = 2)
+// -> is there an element in the list that satisfies this condition
+// -> true
+
+let areAllTwo =
+  [1;1;1;2;1;1]
+  |> Seq.forall (fun nr -> nr = 2)
+// do all elements in the list satisfy this condition
+// -> false
 
 // exists2
 let haveSameElement =
   ([1;1;1;2;1;1], [1;1;1;1;1;1])
   ||> Seq.exists2 (fun x y -> x = y)
 
-// filter vs find
+// filter vs find vs findIndex
 let namesThatStartWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
   |> Seq.toList
@@ -131,3 +128,20 @@ let firstNameWithE =
   |> Seq.toList
   |> List.find (fun name -> name.StartsWith("E"))
 // -> will return first element that satisfies the condition
+
+let firstNameIndexWithE =
+  ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
+  |> Seq.toList
+  |> List.findIndex (fun name -> name.StartsWith("E"))
+// -> will return the index of the first element that satisfies the condition
+
+// choose
+let tryFloat str =
+    match System.Single.TryParse(str) with
+    | true, i -> Some i
+    | false, _ -> None
+let floatStringList = ["1.0"; "2.0"; "sthsth"]
+let parsedFloats =
+  floatStringList
+  |> Seq.choose tryFloat
+  // -> same as filter but with option

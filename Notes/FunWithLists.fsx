@@ -64,10 +64,10 @@ let shouldBeZero =
 // [1;1;2;1;1;1] -> [1;1]
 
 // concat
-let listOfNames1 = ["Bob"; "Kate"; "Sarah"]
+let listOfNames1 = ["Emily"; "Bob"; "Kate"; "Sarah"]
 let listOfNames2 =  ["Frank"; "Thomas"; "Lien"]
 let listOfNames3 =  ["Mattis"; "Wout"; "Eme"]
-let listOfNames4 =  ["Mattis"; "Wout"; "Eme"]
+let listOfNames4 =  ["Mattis"; "Wout"; "Eme"; "Emily"]
 let concatedListOfNames =
   [listOfNames1; listOfNames2; listOfNames3; listOfNames4]
   |> Seq.concat
@@ -84,3 +84,17 @@ let groupByAge =
   |> Seq.countBy snd
 // -> can be used with fst & snd if you have list of key-value pairs
 // -> seq [(19, 2); (18, 2); (17, 1); (3, 1)]
+
+// delay
+
+// distinct
+let distinctNameList =
+  concatedListOfNames
+  |> Seq.toList
+  |> List.distinct
+
+// distinctBy
+let distinctByNameList =
+   ["Emily"; "Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
+  |> Seq.toList
+  |> List.distinctBy (fun name -> name.StartsWith("E"))

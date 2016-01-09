@@ -99,6 +99,7 @@ let distinctByNameList =
   |> Seq.toList
   |> List.distinctBy (fun name -> name.StartsWith("E"))
 // -> result is ["Emily"; "Bob"] because Emily is true and Bob is false
+// -> check out filter
 
 // empty
 let emptyStringList = Seq.empty<string>
@@ -118,3 +119,17 @@ let containsTwo =
 let haveSameElement =
   ([1;1;1;2;1;1], [1;1;1;1;1;1])
   ||> Seq.exists2 (fun x y -> x = y)
+
+// filter
+let namesThatStartWithE =
+  ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
+  |> Seq.toList
+  |> List.filter (fun name -> name.StartsWith("E"))
+// -> returns ALL elements that satisfies the condition
+
+// find
+let firstNameWithE =
+  ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
+  |> Seq.toList
+  |> List.find (fun name -> name.StartsWith("E"))
+// -> will return first element that satisfies the condition

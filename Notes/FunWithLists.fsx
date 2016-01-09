@@ -47,11 +47,10 @@ let parsedFloats =
   // -> same as filter but with option
 
 // collect
-let seqNr a = a
 let listOfLists = [ listOneToFive; listSixToTen]
 let flattenedList =
   listOfLists
   |> List.collect id
-// -> id is the identity function and is the same as seqNr
+// -> id is the identity function and as (fun x -> x) or let id a = a
 
-// 
+//

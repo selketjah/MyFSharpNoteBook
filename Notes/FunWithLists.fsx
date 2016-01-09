@@ -53,4 +53,12 @@ let flattenedList =
   |> List.collect id
 // -> id is the identity function and as (fun x -> x) or let id a = a
 
-//
+// compareWith
+let firstList =  [1;1;1;1;1;1] //[1;1;2;1;1;1] -> 1
+let secondList =  [1;1;1;1;1;1] //[1;1;2;1;1;1] -> -1
+let shouldBeZero =
+  (firstList, secondList)
+  ||> List.compareWith (fun elem1 elem2 -> elem1.CompareTo(elem2))
+// -> 0 if equal - -1 if second list is shorter or 1 if first list is shorter
+// -> shorter explained: it cuts off the list at first difference
+// [1;1;2;1;1;1] -> [1;1]

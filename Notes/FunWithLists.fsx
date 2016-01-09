@@ -103,4 +103,8 @@ let distinctByNameList =
 // empty
 let emptyStringList = Seq.empty<string>
 
-// 
+// exactlyOne
+let emily =
+  ["Emily"]
+  |> Seq.toList
+  |> Seq.exactlyOne

@@ -102,19 +102,28 @@ let emily =
 let containsTwo =
   [1;1;1;2;1;1]
   |> Seq.exists (fun nr -> nr = 2)
-// -> is there an element in the list that satisfies this condition
+// -> is there an element in the list that satisfies this condition?
 // -> true
 
 let areAllTwo =
   [1;1;1;2;1;1]
   |> Seq.forall (fun nr -> nr = 2)
-// do all elements in the list satisfy this condition
+// do all elements in the list satisfy this condition?
 // -> false
 
-// exists2
+// exists2 vs forall2
 let haveSameElement =
   ([1;1;1;2;1;1], [1;1;1;1;1;1])
   ||> Seq.exists2 (fun x y -> x = y)
+// is there an element in the first list the same (with same index) as an element in the second list
+// -> true
+
+let areTheSameList =
+  ([1;1;1;2;1;1], [1;1;1;1;1;1])
+  ||> Seq.forall2 (fun x y -> x = y)
+// are these two lists the same?
+// -> false
+
 
 // filter vs find vs findIndex
 let namesThatStartWithE =

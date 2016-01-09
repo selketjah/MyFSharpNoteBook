@@ -62,3 +62,11 @@ let shouldBeZero =
 // -> 0 if equal - -1 if second list is shorter or 1 if first list is shorter
 // -> shorter explained: it cuts off the list at first difference
 // [1;1;2;1;1;1] -> [1;1]
+
+// concat
+let listOfNames1 = ["Bob"; "Kate"; "Sarah"]
+let listOfNames2 =  ["Frank"; "Thomas"; "Lien"]
+let listOfNames3 =  ["Mattis"; "Wout"; "Eme"]
+let listOfNames4 =  ["Mattis"; "Wout"; "Eme"]
+let concatedListOfNames = Seq.concat [listOfNames1; listOfNames2; listOfNames3; listOfNames4]
+// -> same as append but number of lists > 2

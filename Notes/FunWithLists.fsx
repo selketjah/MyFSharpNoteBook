@@ -172,4 +172,10 @@ let parsedFloats =
   |> Seq.choose tryFloat
   // -> same as filter but with option
 
-//
+// isEmpty
+
+
+// iter
+let printList =
+  listOneToFive
+  |> List.iter (fun i -> printf "%d" i)

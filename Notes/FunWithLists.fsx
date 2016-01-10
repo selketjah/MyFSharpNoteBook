@@ -1,3 +1,6 @@
+// http://fsharpforfunandprofit.com/posts/list-module-functions/
+// https://msdn.microsoft.com/en-us/library/ee353635.aspx
+
 // init /initInifite
 let listOneToFive = List.init 5 (fun i -> int (i+1))
 let listSixToTen = List.init 5 (fun i -> int (i+6))
@@ -157,7 +160,7 @@ let firstNameIndexWithE =
   |> List.findIndex (fun name -> name.StartsWith("E"))
 // -> will return the index of the first element that satisfies the condition
 
-// choose
+// choose vs pick
 let tryFloat str =
     match System.Single.TryParse(str) with
     | true, i -> Some i
@@ -167,6 +170,8 @@ let parsedFloats =
   floatStringList
   |> Seq.choose tryFloat
   // -> same as filter but with option
+
+
 
 // isEmpty
 
@@ -232,3 +237,5 @@ let firstAlphabeticalPerson =
 let youngestPerson =
   [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
   |> List.minBy snd
+
+// pairwise

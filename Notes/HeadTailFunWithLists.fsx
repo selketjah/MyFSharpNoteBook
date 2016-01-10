@@ -31,4 +31,4 @@ take 3 myList
 [1..3] |> Seq.reduce (*)
 [] |> Seq.fold (*) 1
 
-//head, last
+//head, last, nth

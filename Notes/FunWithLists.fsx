@@ -1,6 +1,6 @@
-// create (seq, list, array)
-let listOneToFive = [1..5]
-let listSixToTen = [6..10]
+// init (seq, list, array)
+let listOneToFive = List.init 5 (fun i -> int (i+1))
+let listSixToTen = List.init 5 (fun i -> int (i+6))
 
 // append vs concat
 let listTen =
@@ -153,6 +153,7 @@ let firstNameWithE =
   |> List.find (fun name -> name.StartsWith("E"))
 // -> will return first element that satisfies the condition
 
+
 let firstNameIndexWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
   |> Seq.toList
@@ -169,3 +170,5 @@ let parsedFloats =
   floatStringList
   |> Seq.choose tryFloat
   // -> same as filter but with option
+
+// 

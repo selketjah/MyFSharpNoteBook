@@ -30,3 +30,5 @@ take 3 myList
 //TODO: check out reduce vs fold
 [1..3] |> Seq.reduce (*)
 [] |> Seq.fold (*) 1
+
+//head, last

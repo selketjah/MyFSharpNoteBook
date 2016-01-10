@@ -22,12 +22,13 @@ let listTen2 =
   |> List.append listSixToTen
 // -> appends listOneToFive to listSixToTen
 
-// average/averageBy
+// average/averageBy with map
 let floatListTen =
   listOneToFive
   |> List.map float
 let averageOfListTen = List.average floatListTen
 // -> only works with floats
+// -> includes example use of function map
 
 let averageOfListTen2 = List.averageBy (fun elem -> float elem) listOneToFive
 // -> for converting to float first use averageBy
@@ -197,4 +198,4 @@ let lengthOfList =
   listOneToFive
   |> List.length
 
-//
+// map, mapi, map2

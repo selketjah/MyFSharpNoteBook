@@ -192,4 +192,9 @@ let printTwoListsWithIndexSimultaneous =
   (listOneToFive,listSixToTen)
   ||> List.iteri2 (fun a b -> printf "index: %d - first list: %d - second list: %d;" a b)
 
+// length
+let lengthOfList =
+  listOneToFive
+  |> List.length
+
 //

@@ -151,11 +151,17 @@ let areTheSameList =
 // are these two lists the same?
 // -> false
 
-// filter vs find vs tryFind vs findIndex vs tryFindIndex
+// filter vs where vs find vs tryFind vs findIndex vs tryFindIndex
 let namesThatStartWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
   |> List.filter (fun name -> name.StartsWith("E"))
 // -> returns ALL elements that satisfies the condition
+
+let namesThatStartWithB =
+  ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
+  |> List.where (fun name -> name.StartsWith("B"))
+// -> returns ALL elements that satisfies the condition
+// -> same as filter
 
 let firstNameWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]

@@ -175,7 +175,13 @@ let parsedFloats =
 // isEmpty
 
 
-// iter
+// iter vs iter2
 let printList =
   listOneToFive
   |> List.iter (fun i -> printf "%d" i)
+
+let printTwoListsSimultaneous =
+  (listOneToFive,listSixToTen)
+  ||> List.iter2 (fun a b -> printf "first list: %d second list: %d" a b)  
+
+//

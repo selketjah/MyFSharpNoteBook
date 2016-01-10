@@ -204,11 +204,9 @@ let spanishWord word =
 
 let spanishNames =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
-  |> Seq.toList
   |> List.map spanishWord
 
 let spanishNamesWithIndex =
     ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
-    |> Seq.toList
     |> List.map spanishWord
     |> List.mapi (fun x -> printf "index: %d - spanish name: %s;" x)

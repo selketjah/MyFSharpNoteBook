@@ -112,10 +112,18 @@ let distinctByNameList =
 // empty
 let emptyStringList = Seq.empty<string>
 
-// exactlyOne
+// exactlyOne vs singleton
 let emily =
   ["Emily"]
-  |> Seq.exactlyOne
+  |> List.exactlyOne
+// -> exactlyOne returns the only value in the list
+// -> emily : string = "Emily"
+
+let eme =
+  "Eme"
+  |> List.singleton
+// -> singleton creates a list with one value
+// -> string list = ["Eme"]
 
 // exists vs forall
 let containsTwo =
@@ -249,4 +257,4 @@ let youngestPerson =
 
 // readonly
 
-// scan
+//

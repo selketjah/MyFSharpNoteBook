@@ -169,6 +169,7 @@ let floatStringList = ["sthsth"; "1.0"; "2.0"]
 let parsedFloats =
   floatStringList
   |> Seq.choose tryFloat
+// -> returns all elements that can be parsed as a float
 // -> same as filter but with option
 
 let parsedFloatsWithPick =

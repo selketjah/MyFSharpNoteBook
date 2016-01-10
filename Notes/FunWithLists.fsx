@@ -257,4 +257,15 @@ let youngestPerson =
 
 // readonly
 
-//
+//sort, sortBy
+let sortedByName =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
+  |> List.sort
+
+let sortedByAge =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
+  |> List.sortBy snd
+// -> result is [("Eme", 3); ("Sarah", 17); ("Kate", 18); ("Wout", 18); ("Bob", 19);
+// -> ("Anna", 19)] because Bob is first in the list
+
+// skip, skipWhile

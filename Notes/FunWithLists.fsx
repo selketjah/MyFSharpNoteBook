@@ -165,7 +165,7 @@ let firstNameWithE =
 let firstNameWithF =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
   |> List.tryFind (fun name -> name.StartsWith("F"))
-// -> returns some (element) if condition was satisfies or none
+// -> returns some (first element) if condition was satisfies or none
 
 let firstNameIndexWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
@@ -177,7 +177,7 @@ let firstNameIndexWithF =
   |> List.tryFindIndex (fun name -> name.StartsWith("F"))
 // -> will return some (index) of the first element that satisfies the condition or none
 
-// choose vs pick
+// choose vs pick vs tryPick
 let tryFloat str =
     match System.Single.TryParse(str) with
     | true, i -> Some i
@@ -194,6 +194,12 @@ let parsedFloatsWithPick =
   |> List.pick tryFloat
 // -> returns the first element that can be parsed as a float
 // -> same as find but with option
+
+let possibleParsedFloat =
+  ["sthsth"; "f"; "a"]
+  |> List.tryPick tryFloat
+// -> returns some (first element) or none
+// -> same as tryFind
 
 // isEmpty
 let hasItems =

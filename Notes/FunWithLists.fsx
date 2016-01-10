@@ -205,3 +205,8 @@ let spanishNamesWithIndex =
     ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
     |> List.map spanishWord
     |> List.mapi (fun x -> printf "index: %d - spanish name: %s;" x)
+
+// map2, mapi2
+let coupleNameWithAge =
+  (["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"], [18; 16; 42; 4; 7])
+  ||> List.map2 (fun name age -> (name, age))

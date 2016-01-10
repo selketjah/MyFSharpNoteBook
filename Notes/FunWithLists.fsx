@@ -102,7 +102,6 @@ let distinctNameList =
 // distinctBy
 let distinctByNameList =
    ["Emily"; "Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
-  |> Seq.toList
   |> List.distinctBy (fun name -> name.StartsWith("E"))
 // -> result is ["Emily"; "Bob"] because Emily is true and Bob is false
 // -> check out filter
@@ -113,7 +112,6 @@ let emptyStringList = Seq.empty<string>
 // exactlyOne
 let emily =
   ["Emily"]
-  |> Seq.toList
   |> Seq.exactlyOne
 
 // exists vs forall
@@ -145,20 +143,17 @@ let areTheSameList =
 // filter vs find vs findIndex
 let namesThatStartWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
-  |> Seq.toList
   |> List.filter (fun name -> name.StartsWith("E"))
 // -> returns ALL elements that satisfies the condition
 
 let firstNameWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
-  |> Seq.toList
   |> List.find (fun name -> name.StartsWith("E"))
 // -> will return first element that satisfies the condition
 
 
 let firstNameIndexWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
-  |> Seq.toList
   |> List.findIndex (fun name -> name.StartsWith("E"))
 // -> will return the index of the first element that satisfies the condition
 

@@ -8,8 +8,10 @@ let infiniteList = Seq.initInfinite (fun i -> int i)
 
 // append (@) vs concat
 let listTen =
-  List.append listOneToFive listSixToTen
+  (listOneToFive, listSixToTen)
+  ||> List.append
 // -> appends listSixToTen to listOneToFive
+// -> notice the two | that are being used
 
 listOneToFive @ listSixToTen
 // -> same as append
@@ -40,6 +42,7 @@ let threeZippedList =
   (listOfNames1, listOfNames4, listOfNames5)
   |||> List.zip3
 // -> creates tuples of three
+// -> notice the three | that are being used
 
 let unzippedList =
   [("Emily", "Mattis"); ("Bob", "Wout"); ("Kate", "Eme"); ("Sarah", "Emily")]

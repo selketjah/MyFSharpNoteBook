@@ -268,7 +268,7 @@ let sortedByAge =
 // -> result is [("Eme", 3); ("Sarah", 17); ("Kate", 18); ("Wout", 18); ("Bob", 19);
 // -> ("Anna", 19)] because Bob is first in the list
 
-// skip, take
+// skip, take, truncate
 let skipThree =
   sortedByName
   |> List.skip 3
@@ -278,6 +278,16 @@ let takeThree =
   sortedByName
   |> List.take 3
 // -> first three elements of the list (takes only the first three elements)
+
+let takeSeven =
+  sortedByName
+  |> List.take 7
+// -> this gives you an exception because the list is only 6 long
+
+let firstSevenElements =
+  sortedByName
+  |> List.truncate 7
+// -> in contradiction with take this will not crash but return the entire list
 
 // skipWhile, takeWhile
 let peopleOlderThanSeventeen =

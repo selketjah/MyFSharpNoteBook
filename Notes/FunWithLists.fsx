@@ -268,4 +268,24 @@ let sortedByAge =
 // -> result is [("Eme", 3); ("Sarah", 17); ("Kate", 18); ("Wout", 18); ("Bob", 19);
 // -> ("Anna", 19)] because Bob is first in the list
 
-// skip, skipWhile
+// skip, take
+let skipThree =
+  sortedByName
+  |> List.skip 3
+// -> last three elements of the list (skips the first three elements)
+
+let takeThree =
+  sortedByName
+  |> List.take 3
+// -> first three elements of the list (takes only the first three elements)
+
+// skipWhile, takeWhile
+let peopleOlderThanSeventeen =
+  sortedByAge
+  |> List.skipWhile (fun (a, b) -> b <= 17)
+// -> same as skip but with condition instead
+
+let peopleYoungerThanEighteen =
+  sortedByAge
+  |> List.takeWhile (fun (a, b) -> b <= 17)
+// same as take but with condition instead

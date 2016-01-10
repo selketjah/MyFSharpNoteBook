@@ -1,6 +1,7 @@
-// init (seq, list, array)
+// init /initInifite
 let listOneToFive = List.init 5 (fun i -> int (i+1))
 let listSixToTen = List.init 5 (fun i -> int (i+6))
+let infiniteList = Seq.initInfinite (fun i -> int i)
 
 // append vs concat
 let listTen =
@@ -171,4 +172,4 @@ let parsedFloats =
   |> Seq.choose tryFloat
   // -> same as filter but with option
 
-// 
+//

@@ -210,3 +210,25 @@ let spanishNamesWithIndex =
 let coupleNameWithAge =
   (["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"], [18; 16; 42; 4; 7])
   ||> List.map2 (fun name age -> (name, age))
+
+let printNameAndAge =
+  (["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"], [18; 16; 42; 4; 7])
+  ||> List.mapi2 (fun name age -> printf "index: %d - name: %s - age: %i;" name age)
+
+// max, min, maxBy, minBy
+let lastAlphabeticalPerson =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
+  |> List.max
+
+let oldestPerson =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
+  |> List.maxBy snd
+// -> returns ("Bob", 19) first element of the max age
+
+let firstAlphabeticalPerson =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
+  |> List.min
+
+let youngestPerson =
+  [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
+  |> List.minBy snd

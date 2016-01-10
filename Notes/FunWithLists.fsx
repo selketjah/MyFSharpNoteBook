@@ -6,10 +6,13 @@ let listOneToFive = List.init 5 (fun i -> int (i+1))
 let listSixToTen = List.init 5 (fun i -> int (i+6))
 let infiniteList = Seq.initInfinite (fun i -> int i)
 
-// append vs concat
+// append (@) vs concat
 let listTen =
   List.append listOneToFive listSixToTen
 // -> appends listSixToTen to listOneToFive
+
+listOneToFive @ listSixToTen
+// -> same as append
 
 let listTen2 =
   listOneToFive

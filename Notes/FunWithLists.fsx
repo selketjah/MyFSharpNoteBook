@@ -151,7 +151,7 @@ let areTheSameList =
 // are these two lists the same?
 // -> false
 
-// filter vs find vs findIndex
+// filter vs find vs tryFind vs findIndex vs tryFindIndex
 let namesThatStartWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
   |> List.filter (fun name -> name.StartsWith("E"))
@@ -162,11 +162,20 @@ let firstNameWithE =
   |> List.find (fun name -> name.StartsWith("E"))
 // -> will return first element that satisfies the condition
 
+let firstNameWithF =
+  ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
+  |> List.tryFind (fun name -> name.StartsWith("F"))
+// -> returns some (element) if condition was satisfies or none
 
 let firstNameIndexWithE =
   ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
   |> List.findIndex (fun name -> name.StartsWith("E"))
 // -> will return the index of the first element that satisfies the condition
+
+let firstNameIndexWithF =
+  ["Bob"; "Kate"; "Sarah"; "Eme"; "Emily"]
+  |> List.tryFindIndex (fun name -> name.StartsWith("F"))
+// -> will return some (index) of the first element that satisfies the condition or none
 
 // choose vs pick
 let tryFloat str =

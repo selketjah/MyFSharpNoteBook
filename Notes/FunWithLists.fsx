@@ -246,3 +246,7 @@ let youngestPerson =
   |> List.minBy snd
 
 // pairwise
+
+// readonly
+
+// scan

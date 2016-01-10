@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="FunWithLists.fsx" />
     <Compile Include="HeadTailFunWithLists.fsx" />
+    <Compile Include="AccumulatorFunWithLists.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />

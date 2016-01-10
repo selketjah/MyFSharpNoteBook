@@ -1,0 +1,7 @@
+//fold
+
+
+//reduce
+
+
+//scan

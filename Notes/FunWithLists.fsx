@@ -182,10 +182,14 @@ let printList =
 
 let printListWithIndex =
     listOneToFive
-    |> List.iteri (fun i nr -> printf "index: %d - nr: %d;" i nr)
+    |> List.iteri (fun nr -> printf "index: %d - nr: %d;" nr)
 
 let printTwoListsSimultaneous =
   (listOneToFive,listSixToTen)
   ||> List.iter2 (fun a b -> printf "first list: %d second list: %d;" a b)
+
+let printTwoListsWithIndexSimultaneous =
+  (listOneToFive,listSixToTen)
+  ||> List.iteri2 (fun a b -> printf "index: %d - first list: %d - second list: %d;" a b)
 
 //

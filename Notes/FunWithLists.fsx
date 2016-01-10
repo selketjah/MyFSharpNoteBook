@@ -165,16 +165,22 @@ let tryFloat str =
     match System.Single.TryParse(str) with
     | true, i -> Some i
     | false, _ -> None
-let floatStringList = ["1.0"; "2.0"; "sthsth"]
+let floatStringList = ["sthsth"; "1.0"; "2.0"]
 let parsedFloats =
   floatStringList
   |> Seq.choose tryFloat
-  // -> same as filter but with option
+// -> same as filter but with option
 
-
+let parsedFloatsWithPick =
+  floatStringList
+  |> List.pick tryFloat
+// -> returns the first element that can be parsed as a float
+// -> same as find but with option
 
 // isEmpty
-
+let hasItems =
+  listOneToFive
+  |> List.isEmpty
 
 // iter vs iter2 vs iteri
 let printList =
@@ -228,7 +234,7 @@ let lastAlphabeticalPerson =
 let oldestPerson =
   [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
   |> List.maxBy snd
-// -> returns ("Bob", 19) first element of the max age
+// -> returns ("Bob", 19) first element of reduced list with the highest age
 
 let firstAlphabeticalPerson =
   [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]

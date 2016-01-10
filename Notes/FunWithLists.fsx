@@ -11,19 +11,37 @@ let listTen =
   List.append listOneToFive listSixToTen
 // -> appends listSixToTen to listOneToFive
 
+let listTen2 =
+  listOneToFive
+  |> List.append listSixToTen
+// -> appends listOneToFive to listSixToTen
+
 let listOfNames1 = ["Emily"; "Bob"; "Kate"; "Sarah"]
 let listOfNames2 =  ["Frank"; "Thomas"; "Lien"]
 let listOfNames3 =  ["Mattis"; "Wout"; "Eme"]
 let listOfNames4 =  ["Mattis"; "Wout"; "Eme"; "Emily"]
+let listOfNames5 =  ["Anna"; "Sanne"; "Magda"; "Rose"]
 let concatedListOfNames =
   [listOfNames1; listOfNames2; listOfNames3; listOfNames4]
   |> Seq.concat
 // -> same as append but number of lists > 2
 
-let listTen2 =
-  listOneToFive
-  |> List.append listSixToTen
-// -> appends listOneToFive to listSixToTen
+// zip vs zip3 vs unzip
+let zippedList =
+  (listOfNames1, listOfNames4)
+  ||> List.zip
+// -> lists need to be same length
+// -> creates pair instead of appending
+
+let threeZippedList =
+  (listOfNames1, listOfNames4, listOfNames5)
+  |||> List.zip3
+// -> creates tuples of three
+
+let unzippedList =
+  [("Emily", "Mattis"); ("Bob", "Wout"); ("Kate", "Eme"); ("Sarah", "Emily")]
+  |> List.unzip
+// -> returns two lists
 
 // average/averageBy with map
 let floatListTen =
@@ -274,7 +292,7 @@ let youngestPerson =
   [("Bob", 19); ("Kate", 18); ("Sarah", 17); ("Anna", 19); ("Wout", 18); ("Eme", 3)]
   |> List.minBy snd
 
-// pairwise
+// pairwise, windowed
 
 // readonly
 

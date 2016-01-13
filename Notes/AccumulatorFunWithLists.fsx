@@ -28,7 +28,11 @@ List.mapFoldBack (fun acc i -> i + 1, acc + i) [-10..10] 0
 // -> same as fold, but traces the steps and returns them
 
 // sum, sumBy
-[1..10] |> Seq.sum
+[-10..10] |> Seq.sum
+[3] |> List.sum
+//[] |> List.sum
+// -> short for a reduce (+)
+// -> shows error
 
 let totalAge =
   [("Bob", 19); ("Kate", 18); ("Sarah", 17);("Mattis", 19); ("Wout", 18); ("Eme", 3)]

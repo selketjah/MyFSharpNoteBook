@@ -18,6 +18,11 @@ List.foldBack (+) [-10..10] 0
 // -> commutative -> a x b == b x a
 // -> associative -> (a + b) + c == a + (b + c)
 
+// mapFold & mapFoldBack
+[-10..10] |> List.mapFold (fun acc i -> i + 1, acc + i) 0
+List.mapFoldBack (fun acc i -> i + 1, acc + i) [-10..10] 0
+// -> mapFoldBack is right to left && same syntax as foldBack
+
 //scan
 [-10..10] |> List.scan (+) 0
 // -> same as fold, but traces the steps and returns them

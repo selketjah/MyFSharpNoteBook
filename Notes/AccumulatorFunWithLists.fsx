@@ -3,15 +3,20 @@
 List.foldBack (+) [-10..10] 0
 // -> any reduce can be written as a fold
 // -> foldBack right to left & diff syntax
+[3] |> List.fold (+) 0
+[] |> List.fold (+) 0
 
 //reduce & reduceBack
 [-10..10] |> List.reduce (+)
 [-10..10] |> List.reduceBack (+)
-// -> commutative -> a x b == b x a
-// -> associative -> (a + b) + c == a + (b + c)
+// -> reduceBack right to left
+[3] |> List.reduce (+)
+[] |> List.reduce (+)
+
 // -> error on empty list
 // -> not every fold can be written as a recude
-// -> reduceBack right to left
+// -> commutative -> a x b == b x a
+// -> associative -> (a + b) + c == a + (b + c)
 
 //scan
 [-10..10] |> List.scan (+) 0

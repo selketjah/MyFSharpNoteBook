@@ -15,8 +15,25 @@ List.foldBack (+) [-10..10] 0
 
 // -> error on empty list
 // -> not every fold can be written as a recude
+
+[1;2;3;4]
+(1+2)+(3+4)=1+(2+3+4)
+1+2 = 0 + 1 + 2
+
+//+ on int is a monoid
+//average on float is NOT a monoid
 // -> commutative -> a x b == b x a
 // -> associative -> (a + b) + c == a + (b + c)
+
+let rng = System.Random ()
+let xs = [ for i in 0 .. 99 -> rng.Next(0,10)]
+
+// find all places where we have 3 numbers that are increasing
+let increasing3 (xs:int[]) = xs.[0] < xs.[1] && xs.[1] < xs.[2]
+
+xs |> Seq.windowed 3 |> Seq.filter increasing3
+
+// http://fsharpforfunandprofit.com/posts/monoids-without-tears/
 
 // mapFold & mapFoldBack
 [-10..10] |> List.mapFold (fun acc i -> i + 1, acc + i) 0

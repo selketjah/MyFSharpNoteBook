@@ -46,6 +46,10 @@
     <Compile Include="FunWithLists.fsx" />
     <Compile Include="HeadTailFunWithLists.fsx" />
     <Compile Include="AccumulatorFunWithLists.fsx" />
+    <Compile Include="functions.fsx" />
+    <Compile Include="Intro-to-DUs.fsx" />
+    <Compile Include="ListComprehensions.fsx" />
+    <Compile Include="TypeProviders.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />

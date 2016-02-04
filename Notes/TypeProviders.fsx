@@ -20,9 +20,8 @@ let belgium = country "Belgium"
 let countries =
   [| us; belgium|]
 
-[ for c in countries ->
-    c.Indicators.``Gross enrolment ratio, primary, female (%)`` ]
+[ for c in countries do
+    yield c.Indicators.``Gross enrolment ratio, tertiary, male (%)``
+    yield c.Indicators.``Gross enrolment ratio, tertiary, female (%)`` ]
 |> List.map Chart.Line
 |> Chart.Combine
-
-

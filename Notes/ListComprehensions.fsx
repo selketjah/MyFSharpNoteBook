@@ -4,14 +4,23 @@
 ['0' .. '9']
 // numeric char list
 
-['a' .. '9']
-// empty list
+[ '$' .. '&' ]
+// char list = ['$'; '%'; '&']
 
-['a' .. '$']
-//empty list
+['9' .. 'a']
+// order from ascii table 9 -> a
 
-['&' .. '$']
-//empty list
+['$' .. 'a']
+// order from ascii table $ -> a
+
+[ 1 .. 2 .. 10]
+[ 10 .. -2 .. 1]
+char 10
+[for c in 10..20 -> char c]
+
+int 'A'
+
+[ for c in (int '$') .. (int '&')  -> char c ]
 
 [0x7A .. 0x7F]
 //122 -> 127
@@ -37,9 +46,21 @@
 ]
 
 [for a in 1 .. 10 do
-  yield! [a * 5]]
+  yield [ for j in 1 .. 5 -> a * (5 * j)]]
+
+[for a in 1 .. 10 do
+  yield! [ for j in 1 .. 5 -> a * (5 * j)]]
 // multiplication of 5
 // yield -> [[5]; [10]; [15]; [20]; [25]; [30]; [35]; [40]; [45]; [50]]
 // yield! -> [5; 10; 15; 20; 25; 30; 35; 40; 45; 50]
 
 // -> generator
+
+open System.IO
+
+let root = __SOURCE_DIRECTORY__
+Directory.EnumerateDirectories(root) |> Seq.toList
+
+[ for dir in Directory.EnumerateDirectories(root) do
+    yield! Directory.EnumerateFiles(dir)
+]

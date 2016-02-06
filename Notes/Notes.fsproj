@@ -58,7 +58,7 @@
     <Compile Include="ListComprehensions.fsx" />
     <Compile Include="TypeProviders.fsx" />
     <Compile Include="AssemblyInfo.fs" />
-    <None Include="bot.fsx" />
+    <Compile Include="FsCheck.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

@@ -60,6 +60,8 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="FsCheck.fsx" />
     <None Include="Records.fsx" />
+    <None Include="LevenshteinDistance.fsx" />
+    <None Include="HammingDistance.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

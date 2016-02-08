@@ -1,4 +1,4 @@
-﻿let levenshsteinDistance (one:string) (two:string) =
+﻿let levenshteinDistance (one:string) (two:string) =
   let lengthOne = one.Length 
   let lengthTwo = two.Length 
 

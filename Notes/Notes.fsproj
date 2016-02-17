@@ -62,6 +62,7 @@
     <None Include="Records.fsx" />
     <None Include="LevenshteinDistance.fsx" />
     <None Include="HammingDistance.fsx" />
+    <None Include="MailBoxProcessor.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

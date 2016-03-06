@@ -8,11 +8,15 @@ type Rank =
   | Seven
   | Eight
   | Nine
-  | Jack of int
-  | Queen of int
-  | King of int
-  | Ace of int
-  | Ten of int
+  | Jack
+  | Queen
+  | King
+  | Ace
+  | Ten
+
+type Card = Card of Suit * Rank
+
+
 
 (*let valueOf (card:Rank) =
   match card with
@@ -27,7 +31,7 @@ let winnerOf (card1,card2) =
   | (Seven,_) -> card2
 *)
 
-type Card = Card of Suit * Rank
+
 
 let sevenSpades = (Suit.Spade, Rank.Seven)
-let jackHearts = (Suit.Heart, Rank.Jack(1))
+let jackHearts = (Suit.Heart, Rank.Jack)

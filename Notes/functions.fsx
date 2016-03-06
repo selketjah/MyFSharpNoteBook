@@ -36,10 +36,10 @@ cleaner "HeLL   o BelgIUM"
 
 type Cleaner = string -> string
 
-let cleanup (txts:string list) =
+let cleanup2 (txts:string list) =
   txts |> List.map (cleaner)
 
-[ "Abdsfa ";"   sdsaF" ] |> cleanup
+[ "Abdsfa ";"   sdsaF" ] |> cleanup2
 
 
 let extensibleCleanup (f:Cleaner) (txts:string list) =
@@ -50,7 +50,7 @@ let extensibleCleanup (f:Cleaner) (txts:string list) =
 
   // sprintf "hello world %s %i %.2f %A" "Belgium" 42 123.456789 (System.DateTime.Now)
 
-  let timed = adinene
+//let timed = adinene
 
 (*
   let lazyDemo =

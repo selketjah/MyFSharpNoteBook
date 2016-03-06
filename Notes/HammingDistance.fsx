@@ -14,7 +14,9 @@ let hammingDistance2 (one:string) (two:string) =
   else
     (one, two)
     ||> Seq.zip
-    |> Seq.fold (fun count (a,b) -> 
-      if a=b 
-      then count 
+    |> Seq.fold (fun count (a,b) ->
+      if a=b
+      then count
       else count + 1) 0
+
+  let a x = x * 2

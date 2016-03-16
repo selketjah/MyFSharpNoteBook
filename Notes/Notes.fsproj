@@ -64,6 +64,7 @@
     <None Include="MailBoxProcessor.fsx" />
     <None Include="Classes.fsx" />
     <Compile Include="Twitter.fs" />
+    <None Include="sets.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

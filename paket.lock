@@ -1,32 +1,18 @@
+FRAMEWORK: >= NET462
 NUGET
   remote: https://www.nuget.org/api/v2
-  specs:
-    FsCheck (2.2.4)
+    FsCheck (2.7.1)
       FSharp.Core (>= 3.1.2.5)
-    FSharp.Charting (0.90.13)
-    FSharp.Core (4.0.0.1)
-    FSharp.Data (2.2.5)
-      Zlib.Portable (>= 1.10.0) - framework: portable-net40+sl50+wp80+win80
-    linqtotwitter (4.0.0)
-      Microsoft.Bcl (>= 1.1.10) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-      Microsoft.Bcl.Build (>= 1.0.21) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-      Microsoft.Bcl.Compression (>= 3.9.85) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-      Microsoft.Net.Http (>= 2.2.29) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-      modernhttpclient (>= 2.4.2) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
+    FSharp.Charting (0.90.14)
+    FSharp.Core (4.1)
+      System.ValueTuple (>= 4.3)
+    FSharp.Data (2.3.2)
+    linqtotwitter (4.1)
       Rx-Core (>= 2.2.5)
       Rx-Interfaces (>= 2.2.5)
       Rx-Linq (>= 2.2.5)
       Rx-Main (>= 2.2.5)
       Rx-PlatformServices (>= 2.2.5)
-    Microsoft.Bcl (1.1.10) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-      Microsoft.Bcl.Build (>= 1.0.14)
-    Microsoft.Bcl.Build (1.0.21) - import_targets: false, framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-    Microsoft.Bcl.Compression (3.9.85) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-      Microsoft.Bcl.Build (>= 1.0.14)
-    Microsoft.Net.Http (2.2.29) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
-      Microsoft.Bcl (>= 1.1.10)
-      Microsoft.Bcl.Build (>= 1.0.14)
-    modernhttpclient (2.4.2) - framework: monoandroid, monotouch, portable-net45+win8+wpa81, xamarinios
     Rx-Core (2.2.5)
       Rx-Interfaces (>= 2.2.5)
     Rx-Interfaces (2.2.5)
@@ -41,4 +27,4 @@ NUGET
     Rx-PlatformServices (2.3)
       Rx-Core (>= 2.2)
       Rx-Interfaces (>= 2.2)
-    Zlib.Portable (1.11.0) - framework: portable-net40+sl50+wp80+win80
+    System.ValueTuple (4.3)

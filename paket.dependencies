@@ -1,3 +1,4 @@
+framework: >= net462
 source https://nuget.org/api/v2
 
 nuget FSharp.Data
